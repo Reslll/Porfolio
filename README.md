@@ -1,2 +1,2 @@
-# porfolio
-Woojin's porfolio
+# portfolio
+Woojin's portfolio
