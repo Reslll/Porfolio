@@ -344,13 +344,20 @@ p {
   top: -20px;
   left: 4px;
   opacity: 0;
-  transition: all var(--animation-duration) ease-in;
+  transition: all var(--animation-duration) ease-out;
 }
 
 .work__projects {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  transition: all var(--animation-duration) ease-in;
+  opacity: 1;
+}
+
+.work__projects.anim-out {
+  opacity: 0;
+  transform: scale(0.96) translateY(40px);
 }
 
 .project {
@@ -362,6 +369,10 @@ p {
   height: 300px;
   margin: 2px;
   background-color: var(--color-light-white);
+}
+
+.project.invisible {
+  display: none;
 }
 
 .project__img {
@@ -432,6 +443,28 @@ p {
   color: var(--color-yellow);
 }
 
+/*  Scroll */
+
+.arrow-up {
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  width: 70px;
+  height: 70px;
+  font-size: 50px;
+  color: var(--color-white);
+  background-color: var(--color-pink);
+  border-radius: 50%;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 300ms ease-in;
+}
+
+.arrow-up.visible {
+  opacity: 1;
+  pointer-events: auto;
+  
+}
 @media screen and (max-width: 768px) {
   .navbar__toggle-btn {
     display: block;
